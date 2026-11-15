@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="testeMAUI.Views.ContratacaoHospedagem"
+    Title="Contratação de Hospedagem"
+    BackgroundColor="#F4F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="18"
+            MaximumWidthRequest="650">
+
+            <Label
+                Text="HOTEL BELA VISTA"
+                FontSize="16"
+                FontAttributes="Bold"
+                TextColor="#167D8D"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Calcule sua hospedagem"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="#18324B"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Escolha seus hóspedes, acomodação e período."
+                FontSize="14"
+                TextColor="#64748B"
+                HorizontalTextAlignment="Center" />
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#DDE5ED"
+                StrokeThickness="1"
+                Padding="20"
+                StrokeShape="RoundRectangle 16">
+
+                <VerticalStackLayout Spacing="18">
+
+                    <Label
+                        Text="Quantidade de hóspedes"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#18324B" />
+
+                    <Grid ColumnDefinitions="*,Auto,Auto"
+                          ColumnSpacing="15">
+                        <Label
+                            Grid.Column="0"
+                            Text="Adultos"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding Value, Source={x:Reference stp_adultos}}"
+                            VerticalOptions="Center"
+                            TextColor="#167D8D"
+                            FontAttributes="Bold" />
+
+                        <Stepper
+                            Grid.Column="2"
+                            x:Name="stp_adultos"
+                            Minimum="1"
+                            Maximum="10"
+                            Increment="1"
+                            Value="1" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,Auto,Auto"
+                          ColumnSpacing="15">
+                        <Label
+                            Grid.Column="0"
+                            Text="Crianças"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="1"
+                            Text="{Binding Value, Source={x:Reference stp_criancas}}"
+                            VerticalOptions="Center"
+                            TextColor="#167D8D"
+                            FontAttributes="Bold" />
+
+                        <Stepper
+                            Grid.Column="2"
+                            x:Name="stp_criancas"
+                            Minimum="0"
+                            Maximum="10"
+                            Increment="1" />
+                    </Grid>
+
+                    <BoxView HeightRequest="1"
+                             Color="#DDE5ED" />
+
+                    <Label
+                        Text="Escolha sua suíte"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#18324B" />
+
+                    <Picker
+                        x:Name="pck_quarto"
+                        Title="Selecione sua acomodação">
+                        <Picker.Items>
+                            <x:String>Suíte Standard</x:String>
+                            <x:String>Suíte Luxo</x:String>
+                            <x:String>Suíte Premium</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <BoxView HeightRequest="1"
+                             Color="#DDE5ED" />
+
+                    <Label
+                        Text="Período da estadia"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                        TextColor="#18324B" />
+
+                    <Label Text="Check-in" />
+                    <DatePicker
+                        x:Name="dtpck_checkin"
+                        Format="dd/MM/yyyy" />
+
+                    <Label Text="Check-out" />
+                    <DatePicker
+                        x:Name="dtpck_checkout"
+                        Format="dd/MM/yyyy" />
+
+
+                    <Button
+                        Text="CALCULAR HOSPEDAGEM"
+                        BackgroundColor="#167D8D"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="12"
+                        HeightRequest="52"
+                        Clicked="OnCalcularClicked" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Label
+                Text="App Hotel • Desenvolvido em 2026"
+                FontSize="12"
+                TextColor="#64748B"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

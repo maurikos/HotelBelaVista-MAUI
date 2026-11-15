@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="testeMAUI.Views.HospedagemContratada"
+    Title="Resumo da Hospedagem"
+    BackgroundColor="#F4F7FA">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="20"
+            MaximumWidthRequest="550"
+            VerticalOptions="Center">
+
+            <Label
+                Text="HOTEL BELA VISTA"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="#167D8D"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Resumo da sua hospedagem"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="#18324B"
+                HorizontalTextAlignment="Center" />
+
+            <Border
+                BackgroundColor="White"
+                Stroke="#DDE5ED"
+                Padding="25"
+                StrokeShape="RoundRectangle 16">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label
+                        Text="Detalhes da reserva"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="#18324B" />
+
+                    <Label
+                        x:Name="lbl_suite"
+                        FontSize="16"
+                        TextColor="#475569" />
+
+                    <Label
+                        x:Name="lbl_hospedes"
+                        FontSize="16"
+                        TextColor="#475569" />
+
+                    <Label
+                        x:Name="lbl_checkin"
+                        FontSize="16"
+                        TextColor="#475569" />
+
+                    <Label
+                        x:Name="lbl_checkout"
+                        FontSize="16"
+                        TextColor="#475569" />
+
+                    <Label
+                        x:Name="lbl_diarias"
+                        FontSize="16"
+                        TextColor="#475569" />
+
+                    <BoxView
+                        HeightRequest="1"
+                        Color="#DDE5ED" />
+
+                    <Label
+                        Text="Valor total da hospedagem"
+                        FontSize="16"
+                        TextColor="#18324B" />
+
+                    <Label
+                        x:Name="lbl_total"
+                        FontSize="32"
+                        FontAttributes="Bold"
+                        TextColor="#167D8D" />
+
+                    <Button
+                        Text="VOLTAR"
+                        BackgroundColor="#167D8D"
+                        TextColor="White"
+                        CornerRadius="12"
+                        Clicked="OnVoltarClicked" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Label
+                Text="Simulação de hospedagem • 2026"
+                FontSize="12"
+                TextColor="#64748B"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
